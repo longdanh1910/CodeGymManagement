@@ -46,7 +46,7 @@ public class TeacherRepository implements ITeacherRepository {
     public void updateTeacher(int idTeacher, Teacher updateTeacher) {
         Teacher teacher = findTeacher(idTeacher);
         teacher.setName(updateTeacher.getName());
-        teacher.setAge(updateTeacher.getAge());
+        teacher.setDate(updateTeacher.getDate());
         teacher.setEmail(updateTeacher.getEmail());
         teacher.setLevel(updateTeacher.getLevel());
         teacher.setSubjectToTeach(updateTeacher.getSubjectToTeach());

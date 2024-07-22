@@ -1,4 +1,5 @@
 package controller;
+import java.time.LocalDate;
 import java.util.Scanner;
 import model.Teacher;
 import service.teacher_service.ITeacherService;
@@ -20,16 +21,16 @@ public class TeacherController {
     public void addTeacher() {
         System.out.print("Nhập tên giảng viên: ");
         String name = sc.nextLine();
-        System.out.print("Nhập tuổi giảng viên: ");
-        int age = sc.nextInt();
-        sc.nextLine();
+        System.out.print("Nhập ngày sinh giảng viên: ");
+        LocalDate birthday = LocalDate.parse(sc.nextLine());
+
         System.out.print("Nhập email giảng viên: ");
         String email = sc.nextLine();
         System.out.print("Nhập chức vụ của giảng viên: ");
         String level = sc.nextLine();
         System.out.print("Nhập môn giảng viên đang theo giảng: ");
         String subject = sc.nextLine();
-        Teacher teacher = new Teacher(currentTeacherId++, name, email, age, level, subject);
+        Teacher teacher = new Teacher(currentTeacherId++, name, email, birthday, level, subject);
         iTeacherService.addTeacher(teacher);
     }
 
@@ -51,9 +52,9 @@ public class TeacherController {
         }
         System.out.print("Nhập mới tên của giảng viên: ");
         String name = sc.nextLine();
-        System.out.print("Nhập tuổi mới của giảng viên: ");
-        int age = sc.nextInt();
-        sc.nextLine();
+        System.out.print("Nhập ngày sinh của giảng viên: ");
+
+        LocalDate birthday = LocalDate.parse(sc.nextLine());
         System.out.print("Nhập email mới của giảng viên: ");
         String email = sc.nextLine();
         System.out.print("Nhập chức vụ mới của giảng viên: ");
@@ -61,7 +62,7 @@ public class TeacherController {
         System.out.print("Nhập môn mới của giảng viên: ");
         String subject = sc.nextLine();
 
-        Teacher updatedTeacher = new Teacher(id, name, email, age, level, subject);
+        Teacher updatedTeacher = new Teacher(id, name, email, birthday, level, subject);
         iTeacherService.updateTeacher(id, updatedTeacher);
     }
 

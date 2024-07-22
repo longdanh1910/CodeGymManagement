@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 
 public class Student extends Person implements IStudent {
     private String className;
@@ -6,8 +7,8 @@ public class Student extends Person implements IStudent {
 
 
 
-    public Student(int id, String name, String email, int age, String className, String subject) {
-        super(id, name, email, age);
+    public Student(int id, String name, String email, LocalDate birthday, String className, String subject) {
+        super(id, name, email, birthday);
         this.className = className;
         this.subject = subject;
     }

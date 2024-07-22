@@ -24,16 +24,16 @@ public class StudentController {
     public void addStudent() {
         System.out.print("Nhập tên học viên: ");
         String name = sc.nextLine();
-        System.out.print("Nhập tuổi học viên: ");
-        int age = sc.nextInt();
-        sc.nextLine();
+        System.out.print("Nhập ngày sinh học viên: ");
+
+        LocalDate birthday=LocalDate.parse(sc.nextLine());
         System.out.print("Nhập email học viên: ");
         String email = sc.nextLine();
         System.out.print("Nhập lớp của học viên: ");
         String className = sc.nextLine();
         System.out.print("Nhập môn học viên đang theo học: ");
         String subject = sc.nextLine();
-        Student student = new Student(currentStudentId++, name, email, age, className, subject);
+        Student student = new Student(currentStudentId++, name, email, birthday, className, subject);
         iStudentService.addStudent(student);
     }
 
@@ -55,9 +55,8 @@ public class StudentController {
         }
         System.out.print("Nhập mới tên của học viên: ");
         String name = sc.nextLine();
-        System.out.print("Nhập tuổi mới của học viên: ");
-        int age = sc.nextInt();
-        sc.nextLine();
+        System.out.print("Nhập ngày sinh của học viên: ");
+        LocalDate birthday = LocalDate.parse(sc.nextLine());
         System.out.print("Nhập email mới của học viên: ");
         String email = sc.nextLine();
         System.out.print("Nhập lớp mới của học viên: ");
@@ -65,7 +64,7 @@ public class StudentController {
         System.out.print("Nhập môn mới của học viên: ");
         String subject = sc.nextLine();
 
-        Student updatedStudent = new Student(id, name, email, age, className, subject);
+        Student updatedStudent = new Student(id, name, email, birthday, className, subject);
         iStudentService.updateStudent(id, updatedStudent);
     }
 

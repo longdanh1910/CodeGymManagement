@@ -5,13 +5,13 @@ public abstract class Person {
     private int id;
     private String name;
     private String email;
-    private int age;
+    LocalDate birthday;
 
-    public Person(int id, String name, String email, int age) {
+    public Person(int id, String name, String email, LocalDate birthday) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.age = age;
+        this.birthday = birthday;
     }
 
     public int getId() {
@@ -34,17 +34,17 @@ public abstract class Person {
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getDate() {
+        return birthday;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDate(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Name: " + name + ", Age: " + age + ", Email: " + email;
+        return "ID: " + id + ", Name: " + name + ", Birthday: " + birthday + ", Email: " + email;
     }
 }
 

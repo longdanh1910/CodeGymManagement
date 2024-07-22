@@ -49,7 +49,7 @@ public class StudentRepository implements IStudentRepository {
     public void updateStudent(int idStudent, Student updateStudent) {
         Student student = findStudent(idStudent);
         student.setName(updateStudent.getName());
-        student.setAge(updateStudent.getAge());
+        student.setDate(updateStudent.getDate());
         student.setEmail(updateStudent.getEmail());
         student.setClassName(updateStudent.getClassName());
         student.setSubjectToLearn(updateStudent.getSubjectToLearn());

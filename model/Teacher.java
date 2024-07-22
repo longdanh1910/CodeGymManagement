@@ -6,8 +6,8 @@ public class Teacher extends Person implements ITeacher{
     private String level;
     private String subject;
 
-    public Teacher(int id, String name, String email, int age, String level, String subject) {
-        super(id, name, email, age);
+    public Teacher(int id, String name, String email, LocalDate birthday, String level, String subject) {
+        super(id, name, email, birthday);
         this.level = level;
         this.subject = subject;
     }
